@@ -7,21 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2C0E2EAAD4D1F1BF193073 /* Pods_lipht.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67C76FBED4DEC65B159C640 /* Pods_lipht.framework */; };
+		AF1A449F1C5D6EC300332A3B /* LiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A449E1C5D6EC300332A3B /* LiftViewController.swift */; };
+		AF1A44A11C5D6F0300332A3B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A44A01C5D6F0300332A3B /* ReviewViewController.swift */; };
+		AF1A44A51C5DA4CF00332A3B /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A44A41C5DA4CF00332A3B /* Exercise.swift */; };
 		AF32CCEA1C5D576B00D97EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32CCE91C5D576B00D97EB0 /* AppDelegate.swift */; };
-		AF32CCEC1C5D576B00D97EB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32CCEB1C5D576B00D97EB0 /* ViewController.swift */; };
+		AF32CCEC1C5D576B00D97EB0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32CCEB1C5D576B00D97EB0 /* LoginViewController.swift */; };
 		AF32CCEF1C5D576B00D97EB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32CCED1C5D576B00D97EB0 /* Main.storyboard */; };
 		AF32CCF11C5D576B00D97EB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF32CCF01C5D576B00D97EB0 /* Assets.xcassets */; };
 		AF32CCF41C5D576B00D97EB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32CCF21C5D576B00D97EB0 /* LaunchScreen.storyboard */; };
+		AF804DF31C5DB7B800BD9BC9 /* UserExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF804DF21C5DB7B800BD9BC9 /* UserExercise.swift */; };
+		AF804DF51C5E475800BD9BC9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */; };
+		AFCCB5F71C5E52B1002ACD9B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCB5F61C5E52B1002ACD9B /* UserManager.swift */; };
+		AFCCB5F91C5E5F53002ACD9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCB5F81C5E5F53002ACD9B /* User.swift */; };
+		AFCCB5FB1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCB5FA1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift */; };
+		AFCCB5FD1C5EB80E002ACD9B /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCB5FC1C5EB80E002ACD9B /* ReviewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58CAF3BBA4AA9D1C963E7489 /* Pods-lipht.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lipht.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lipht/Pods-lipht.debug.xcconfig"; sourceTree = "<group>"; };
+		7C6141D69DEB237D6AF5FA00 /* Pods-lipht.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lipht.release.xcconfig"; path = "Pods/Target Support Files/Pods-lipht/Pods-lipht.release.xcconfig"; sourceTree = "<group>"; };
+		AF1A449E1C5D6EC300332A3B /* LiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftViewController.swift; sourceTree = "<group>"; };
+		AF1A44A01C5D6F0300332A3B /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		AF1A44A41C5DA4CF00332A3B /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		AF32CCE61C5D576B00D97EB0 /* lipht.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lipht.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF32CCE91C5D576B00D97EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF32CCEB1C5D576B00D97EB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF32CCEB1C5D576B00D97EB0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AF32CCEE1C5D576B00D97EB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF32CCF01C5D576B00D97EB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF32CCF31C5D576B00D97EB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF32CCF51C5D576B00D97EB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF804DF21C5DB7B800BD9BC9 /* UserExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExercise.swift; sourceTree = "<group>"; };
+		AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		AFCCB5F61C5E52B1002ACD9B /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		AFCCB5F81C5E5F53002ACD9B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AFCCB5FA1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseStreamViewController.swift; sourceTree = "<group>"; };
+		AFCCB5FC1C5EB80E002ACD9B /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		D67C76FBED4DEC65B159C640 /* Pods_lipht.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lipht.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2C0E2EAAD4D1F1BF193073 /* Pods_lipht.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87E55B7FAE881BF97FDC16EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D67C76FBED4DEC65B159C640 /* Pods_lipht.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AF32CCDD1C5D576B00D97EB0 = {
 			isa = PBXGroup;
 			children = (
 				AF32CCE81C5D576B00D97EB0 /* lipht */,
 				AF32CCE71C5D576B00D97EB0 /* Products */,
+				FC510BA79CE59F98BED5F7A3 /* Pods */,
+				87E55B7FAE881BF97FDC16EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +88,31 @@
 			isa = PBXGroup;
 			children = (
 				AF32CCE91C5D576B00D97EB0 /* AppDelegate.swift */,
-				AF32CCEB1C5D576B00D97EB0 /* ViewController.swift */,
+				AF32CCEB1C5D576B00D97EB0 /* LoginViewController.swift */,
 				AF32CCED1C5D576B00D97EB0 /* Main.storyboard */,
 				AF32CCF01C5D576B00D97EB0 /* Assets.xcassets */,
 				AF32CCF21C5D576B00D97EB0 /* LaunchScreen.storyboard */,
 				AF32CCF51C5D576B00D97EB0 /* Info.plist */,
+				AF1A449E1C5D6EC300332A3B /* LiftViewController.swift */,
+				AF1A44A01C5D6F0300332A3B /* ReviewViewController.swift */,
+				AF1A44A41C5DA4CF00332A3B /* Exercise.swift */,
+				AF804DF21C5DB7B800BD9BC9 /* UserExercise.swift */,
+				AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */,
+				AFCCB5F61C5E52B1002ACD9B /* UserManager.swift */,
+				AFCCB5F81C5E5F53002ACD9B /* User.swift */,
+				AFCCB5FA1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift */,
+				AFCCB5FC1C5EB80E002ACD9B /* ReviewTableViewCell.swift */,
 			);
 			path = lipht;
+			sourceTree = "<group>";
+		};
+		FC510BA79CE59F98BED5F7A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58CAF3BBA4AA9D1C963E7489 /* Pods-lipht.debug.xcconfig */,
+				7C6141D69DEB237D6AF5FA00 /* Pods-lipht.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF32CCF81C5D576B00D97EB0 /* Build configuration list for PBXNativeTarget "lipht" */;
 			buildPhases = (
+				0615BA1C0D307647E63D3018 /* Check Pods Manifest.lock */,
 				AF32CCE21C5D576B00D97EB0 /* Sources */,
 				AF32CCE31C5D576B00D97EB0 /* Frameworks */,
 				AF32CCE41C5D576B00D97EB0 /* Resources */,
+				44264B074C39551581AE2B13 /* Embed Pods Frameworks */,
+				F990E4C2DDE4B80808037CFA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +150,7 @@
 				TargetAttributes = {
 					AF32CCE51C5D576B00D97EB0 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = ZJ7F6RPYRX;
 					};
 				};
 			};
@@ -130,13 +185,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0615BA1C0D307647E63D3018 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		44264B074C39551581AE2B13 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lipht/Pods-lipht-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F990E4C2DDE4B80808037CFA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lipht/Pods-lipht-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AF32CCE21C5D576B00D97EB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF32CCEC1C5D576B00D97EB0 /* ViewController.swift in Sources */,
+				AF1A44A51C5DA4CF00332A3B /* Exercise.swift in Sources */,
+				AF32CCEC1C5D576B00D97EB0 /* LoginViewController.swift in Sources */,
+				AFCCB5FB1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift in Sources */,
+				AF804DF51C5E475800BD9BC9 /* RegisterViewController.swift in Sources */,
+				AF804DF31C5DB7B800BD9BC9 /* UserExercise.swift in Sources */,
 				AF32CCEA1C5D576B00D97EB0 /* AppDelegate.swift in Sources */,
+				AFCCB5FD1C5EB80E002ACD9B /* ReviewTableViewCell.swift in Sources */,
+				AFCCB5F91C5E5F53002ACD9B /* User.swift in Sources */,
+				AF1A44A11C5D6F0300332A3B /* ReviewViewController.swift in Sources */,
+				AFCCB5F71C5E52B1002ACD9B /* UserManager.swift in Sources */,
+				AF1A449F1C5D6EC300332A3B /* LiftViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,23 +357,31 @@
 		};
 		AF32CCF91C5D576B00D97EB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58CAF3BBA4AA9D1C963E7489 /* Pods-lipht.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = lipht/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lipht.lipht;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		AF32CCFA1C5D576B00D97EB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C6141D69DEB237D6AF5FA00 /* Pods-lipht.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = lipht/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lipht.lipht;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -284,6 +404,7 @@
 				AF32CCFA1C5D576B00D97EB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
