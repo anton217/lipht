@@ -18,6 +18,8 @@
 		AF32CCF41C5D576B00D97EB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32CCF21C5D576B00D97EB0 /* LaunchScreen.storyboard */; };
 		AF804DF31C5DB7B800BD9BC9 /* UserExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF804DF21C5DB7B800BD9BC9 /* UserExercise.swift */; };
 		AF804DF51C5E475800BD9BC9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */; };
+		AF8759D71C653FA200A42D42 /* UserExerciseSetGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8759D61C653FA200A42D42 /* UserExerciseSetGroup.swift */; };
+		AFA2883A1C6855F3008EA54C /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA288391C6855F3008EA54C /* ExerciseTableViewCell.swift */; };
 		AFCCB5F71C5E52B1002ACD9B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCB5F61C5E52B1002ACD9B /* UserManager.swift */; };
 		AFCCB5F91C5E5F53002ACD9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCB5F81C5E5F53002ACD9B /* User.swift */; };
 		AFCCB5FB1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCB5FA1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift */; };
@@ -39,6 +41,8 @@
 		AF32CCF51C5D576B00D97EB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF804DF21C5DB7B800BD9BC9 /* UserExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExercise.swift; sourceTree = "<group>"; };
 		AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		AF8759D61C653FA200A42D42 /* UserExerciseSetGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExerciseSetGroup.swift; sourceTree = "<group>"; };
+		AFA288391C6855F3008EA54C /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		AFCCB5F61C5E52B1002ACD9B /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		AFCCB5F81C5E5F53002ACD9B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AFCCB5FA1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseStreamViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				AFCCB5F81C5E5F53002ACD9B /* User.swift */,
 				AFCCB5FA1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift */,
 				AFCCB5FC1C5EB80E002ACD9B /* ReviewTableViewCell.swift */,
+				AF8759D61C653FA200A42D42 /* UserExerciseSetGroup.swift */,
+				AFA288391C6855F3008EA54C /* ExerciseTableViewCell.swift */,
 			);
 			path = lipht;
 			sourceTree = "<group>";
@@ -243,8 +249,10 @@
 				AFCCB5FB1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift in Sources */,
 				AF804DF51C5E475800BD9BC9 /* RegisterViewController.swift in Sources */,
 				AF804DF31C5DB7B800BD9BC9 /* UserExercise.swift in Sources */,
+				AF8759D71C653FA200A42D42 /* UserExerciseSetGroup.swift in Sources */,
 				AF32CCEA1C5D576B00D97EB0 /* AppDelegate.swift in Sources */,
 				AFCCB5FD1C5EB80E002ACD9B /* ReviewTableViewCell.swift in Sources */,
+				AFA2883A1C6855F3008EA54C /* ExerciseTableViewCell.swift in Sources */,
 				AFCCB5F91C5E5F53002ACD9B /* User.swift in Sources */,
 				AF1A44A11C5D6F0300332A3B /* ReviewViewController.swift in Sources */,
 				AFCCB5F71C5E52B1002ACD9B /* UserManager.swift in Sources */,

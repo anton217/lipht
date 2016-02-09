@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Toast_Swift
 
 class LiftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
@@ -16,6 +17,11 @@ class LiftViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var exerciseSearchBar: UISearchBar!
     @IBOutlet weak var repsSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
+    
+    @IBOutlet weak var repsLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    
+    @IBOutlet weak var liftButton: UIButton!
     
     var ref = Firebase(url:"https://lipht.firebaseio.com")
     
@@ -34,11 +40,39 @@ class LiftViewController: UIViewController, UITableViewDelegate, UITableViewData
         initExerciseTable()
         initSearchBar()
         initDateTimeFormatter()
+        initLabels()
+        
+        self.liftButton.layer.borderColor = UIColor(colorLiteralRed: 255/255, green: 111/255, blue: 105/255, alpha: 0.25).CGColor
+        self.liftButton.layer.borderWidth = 2
+        self.liftButton.layer.cornerRadius = 5
+        
+        self.repsSlider.minimumTrackTintColor = UIColor(colorLiteralRed: 150/255, green: 206/255, blue: 180/255, alpha: 0.65)
+        self.repsSlider.maximumTrackTintColor = UIColor(colorLiteralRed: 150/255, green: 206/255, blue: 180/255, alpha: 0.65)
+        
+        self.weightSlider.minimumTrackTintColor = UIColor(colorLiteralRed: 150/255, green: 206/255, blue: 180/255, alpha: 0.65)
+        self.weightSlider.maximumTrackTintColor = UIColor(colorLiteralRed: 150/255, green: 206/255, blue: 180/255, alpha: 0.65)
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        
+        //LightContent
+        return UIStatusBarStyle.LightContent
+        
+        //Default
+        //return UIStatusBarStyle.Default
+        
+    }
+    
+    private func initLabels() {
+        self.weightLabel.text = String(Int(weightSlider.value))
+        self.repsLabel.text = String(Int(repsSlider.value))
+        self.selectedExerciseLabel.text = "select exercise"
     }
     
     @IBAction func submitLift(sender: AnyObject) {
-        let currentDateTime = formatter.stringFromDate(NSDate())
-
+        
+        let currentDateTime = NSNumber(double: NSDate().timeIntervalSinceReferenceDate)
+        
         let submitExercise : NSDictionary = [
             "userID": user.uid,
             "userEmail": user.email,
@@ -93,15 +127,24 @@ class LiftViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.exerciseTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        let cell:ExerciseTableViewCell = self.exerciseTableView.dequeueReusableCellWithIdentifier("cell")! as! ExerciseTableViewCell
         
         let exercise : Exercise = isSearchActive() ?
             filteredExerciseList[indexPath.row] :
             exerciseList[indexPath.row]
         
-        cell.textLabel?.text = exercise.name
+        cell.liftNameLabel.text = exercise.name
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(colorLiteralRed: 242/255, green: 235/255, blue: 199/255, alpha: 0.05)
+        cell.selectedBackgroundView = backgroundView
+        cell.liftNameLabel.textColor = UIColor(colorLiteralRed: 242/255, green: 235/255, blue: 199/255, alpha: 1)
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.clearColor()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -111,6 +154,16 @@ class LiftViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.selectedExercise = exercise
         self.selectedExerciseLabel.text = exercise.name
+        
+        let cell : ExerciseTableViewCell = self.exerciseTableView.cellForRowAtIndexPath(indexPath) as! ExerciseTableViewCell
+        cell.leftIndicatorView.layer.backgroundColor = UIColor(colorLiteralRed: 170/255, green: 216/255, blue: 176/255, alpha: 1).CGColor
+        cell.liftNameLabel.textColor = UIColor(colorLiteralRed: 170/255, green: 216/255, blue: 176/255, alpha: 1)
+    }
+    
+
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell : ExerciseTableViewCell = self.exerciseTableView.cellForRowAtIndexPath(indexPath) as! ExerciseTableViewCell
+        cell.liftNameLabel.textColor = UIColor(colorLiteralRed: 242/255, green: 235/255, blue: 199/255, alpha: 1)
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -131,13 +184,39 @@ class LiftViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func initExerciseTable() {
-        exerciseTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         exerciseTableView.delegate = self
         exerciseTableView.dataSource = self
     }
     
     private func initSearchBar() {
         exerciseSearchBar.delegate = self
+
+        let corners = UIRectCorner.TopRight.union(UIRectCorner.TopLeft)
+        self.roundCorners(corners, radius: 10)
+    }
+    
+    func roundCorners(corners:UIRectCorner, radius:CGFloat) {
+        let bounds = exerciseSearchBar.bounds;
+        
+        let newBounds = CGRectMake(bounds.origin.x,
+            bounds.origin.y,
+            bounds.size.width - 217,
+            bounds.size.height);
+        
+        let maskPath:UIBezierPath = UIBezierPath(roundedRect: newBounds, byRoundingCorners: corners, cornerRadii: CGSizeMake(radius, radius))
+        
+        let maskLayer:CAShapeLayer = CAShapeLayer()
+        maskLayer.frame = bounds
+        maskLayer.path = maskPath.CGPath
+        
+        exerciseSearchBar.layer.mask = maskLayer
+        
+        let frameLayer = CAShapeLayer()
+        frameLayer.frame = bounds
+        frameLayer.path = maskPath.CGPath
+        frameLayer.fillColor = nil
+        
+        exerciseSearchBar.layer.addSublayer(frameLayer)
     }
     
     private func initDateTimeFormatter() {
@@ -153,7 +232,23 @@ class LiftViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func repsValueChanged(sender: UISlider) {
+        let currentValue = Int(sender.value)
+        
+        self.repsLabel.text = "\(currentValue)"
+    }
 
+    @IBAction func weightValueChanged(sender: UISlider) {
+        let stepSize : Float = 5
+        
+        let roundedValue = round(sender.value / stepSize) * stepSize
+        self.weightSlider.setValue(roundedValue, animated: false)
+        self.weightSlider.value = roundedValue
+        
+        self.weightLabel.text = String(Int16(roundedValue))
+    }
+    
     /*
     // MARK: - Navigation
 

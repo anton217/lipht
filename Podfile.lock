@@ -1,10 +1,13 @@
 PODS:
   - Firebase (2.5.0)
+  - Toast-Swift (1.0.0)
 
 DEPENDENCIES:
   - Firebase (>= 2.5.0)
+  - Toast-Swift (~> 1.0.0)
 
 SPEC CHECKSUMS:
   Firebase: 744617c0733b45198f9486ebd5cac64ec2d10d79
+  Toast-Swift: 709908e9f9a96dfd72438f9301ae28e3e98c16bb
 
 COCOAPODS: 0.39.0

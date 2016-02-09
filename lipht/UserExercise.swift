@@ -17,9 +17,9 @@ struct UserExercise {
     var exerciseName : String
     var reps : NSNumber = 0
     var weight : NSNumber = 0
-    let dateTime : String
+    let dateTime : NSDate
     
-    init(fuserID : String, fuserEmail : String, fExerciseKey : String, fExerciseName : String, fRepCount : NSNumber, fWeight : NSNumber, fDateTime : String) {
+    init(fuserID : String, fuserEmail : String, fExerciseKey : String, fExerciseName : String, fRepCount : NSNumber, fWeight : NSNumber, fDateTime : NSDate) {
         self.userID = fuserID
         self.userEmail = fuserEmail
         self.exerciseKey = fExerciseKey
@@ -36,7 +36,10 @@ struct UserExercise {
         self.exerciseName = item.value["exerciseName"] as! String
         self.reps = item.value["reps"] as! NSNumber
         self.weight = item.value["weight"] as! NSNumber
-        self.dateTime = item.value["dateTime"] as! String
+        
+        let dateTimeValue = item.value["dateTime"] as! NSNumber
+        let dateTimeDouble = dateTimeValue.doubleValue
+        self.dateTime = NSDate(timeIntervalSinceReferenceDate: dateTimeDouble)
     }
 }
 

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '61D81C3A92744CF96665FA4B'
+               BlueprintIdentifier = '14B30B96B5A04919DCBCAC6F'
                BlueprintName = 'Pods-lipht'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_lipht.framework'>

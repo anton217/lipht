@@ -85,7 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-lipht/Firebase.framework"
+  install_framework "Pods-lipht/Toast_Swift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-lipht/Firebase.framework"
+  install_framework "Pods-lipht/Toast_Swift.framework"
 fi

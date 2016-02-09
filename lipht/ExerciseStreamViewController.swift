@@ -20,9 +20,6 @@ class ExerciseStreamViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         
         self.exerciseStreamTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        exerciseStreamTableView.delegate = self
-        exerciseStreamTableView.dataSource = self
 
         self.ref.childByAppendingPath("userExercises")
             .observeEventType(.ChildAdded, withBlock: { snapshot in

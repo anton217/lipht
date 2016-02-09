@@ -16,15 +16,16 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var ref : Firebase = Firebase(url:"https://lipht.firebaseio.com")
     var user : User!
     var userExercises : [UserExercise] = []
+    let formatter = NSDateFormatter()
+    
+    var selectedRow : NSNumber = -1
+    
+    var exerciseSetGroupDictionary : [String : UserExerciseSetGroup] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.reviewTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        reviewTableView.delegate = self
-        reviewTableView.dataSource = self
-        // Do any additional setup after loading the view.
+        formatter.dateFormat = "yyyy.MM.dd G 'at' HH:mm:ss zzz"
         
         ref.observeAuthEventWithBlock { authData in
             if authData != nil {
@@ -47,27 +48,39 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.userExercises.count;
+        return self.exerciseSetGroupDictionary.values.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : ReviewTableViewCell = self.reviewTableView.dequeueReusableCellWithIdentifier("cell") as! ReviewTableViewCell
-        
-        let exercise : UserExercise = self.userExercises[indexPath.row]
-        
-        print(exercise)
-        cell.exerciseNameLabel.text = exercise.exerciseName
-        cell.repsLabel.text = exercise.reps.stringValue
-        cell.weightLabel.text = exercise.weight.stringValue
-        
+
+        let exerciseSetGroup = Array(self.exerciseSetGroupDictionary.values)[indexPath.row]
+
+        cell.load(exerciseSetGroup)
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let exercise : UserExercise = self.userExercises[indexPath.row]
-        print(exercise)
-    }
+        if selectedRow == indexPath.row {
+            self.selectedRow = -1
+        } else {
+            self.selectedRow = indexPath.row
+        }
 
+        self.reviewTableView.beginUpdates()
+        self.reviewTableView.endUpdates()
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let exerciseSetGroup = Array(self.exerciseSetGroupDictionary.values)[indexPath.row]
+        
+        if (selectedRow == indexPath.row) {
+            return CGFloat(70 + exerciseSetGroup.exercises.count * 25)
+        }
+        
+        return 65
+    }
+    
     private func loadExercises() {
         
         ref.childByAppendingPath("userExercises")
@@ -76,17 +89,39 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
             .observeSingleEventOfType(.Value, withBlock: { snapshot in
                 
                 self.userExercises.removeAll()
+                self.exerciseSetGroupDictionary.removeAll()
                 
                 let enumerator = snapshot.children
                 while let item = enumerator.nextObject() as? FDataSnapshot {
 
                     let exercise = UserExercise(item: item)                    
                     self.userExercises.append(exercise)
+                    
+                    let generatedKey = self.createExerciseSetGroupKey(exercise)
+                    
+                    if self.exerciseSetGroupDictionary.keys.contains(generatedKey) {
+                        var exerciseSetGroup = self.exerciseSetGroupDictionary[generatedKey]
+                        exerciseSetGroup?.exercises.append(exercise)
+                        self.exerciseSetGroupDictionary[generatedKey] = exerciseSetGroup
+                    } else {
+                        var newExerciseSetGroup = UserExerciseSetGroup(fdate: exercise.dateTime, fexerciseKey: exercise.exerciseKey)
+                        newExerciseSetGroup.exercises.append(exercise)
+                        self.exerciseSetGroupDictionary[generatedKey] = newExerciseSetGroup
+                    }
+                    
                 }
                 
                 self.userExercises = self.userExercises.reverse()
                 self.reviewTableView.reloadData()
             })
+    }
+    
+    private func createExerciseSetGroupKey(exercise : UserExercise) -> String {
+        formatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        let dateString = formatter.stringFromDate(exercise.dateTime)
+
+        return dateString + "-" + exercise.exerciseKey
     }
     
     /*
