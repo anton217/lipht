@@ -14,15 +14,36 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var nameTextBox: UITextField!
     @IBOutlet weak var emailTextBox: UITextField!
     @IBOutlet weak var passwordTextBox: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
     
-    let ref = Firebase(url: "https://lipht.firebaseio.com")
+    let offWhite : UIColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.7)
+    let almostClear : UIColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.submitButton.layer.borderColor = UIColor(colorLiteralRed: 150/255, green: 206/255, blue: 180/255, alpha: 0.5).CGColor
+        
+        self.emailTextBox.attributedPlaceholder = NSAttributedString(string:"email address", attributes:[NSForegroundColorAttributeName: offWhite])
+        self.passwordTextBox.attributedPlaceholder = NSAttributedString(string:"password", attributes:[NSForegroundColorAttributeName: offWhite])
+        self.nameTextBox.attributedPlaceholder = NSAttributedString(string:"username", attributes:[NSForegroundColorAttributeName: offWhite])
+        
+        nameTextBox.addBottomBorderLine(almostClear)
+        nameTextBox.addIconImage(UIImage(named: "user_icon.png")!, color: offWhite)
+        
+        emailTextBox.addBottomBorderLine(almostClear)
+        emailTextBox.addIconImage(UIImage(named: "message_icon.png")!, color: offWhite)
+        
+        passwordTextBox.addBottomBorderLine(almostClear)
+        passwordTextBox.addIconImage(UIImage(named: "lock_icon.png")!, color: offWhite)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     @IBAction func registerClicked() {
@@ -31,11 +52,11 @@ class RegisterViewController: UIViewController {
         let emailString : String = emailTextBox.text!
         let passwordString : String = passwordTextBox.text!
         
-        self.ref.createUser(emailString, password: passwordString) { (error: NSError!) in
+        Constants.firebase.createUser(emailString, password: passwordString) { (error: NSError!) in
             if error == nil {
                 
                 print("User created successfully")
-                self.ref.authUser(emailString, password: passwordString,
+                Constants.firebase.authUser(emailString, password: passwordString,
                     withCompletionBlock: { (error, auth) -> Void in
                         
                         print("User automatically logged in")
@@ -47,7 +68,7 @@ class RegisterViewController: UIViewController {
                         ]
                         
                         print("User added to tree")
-                        self.ref.childByAppendingPath("users")
+                        Constants.firebase.childByAppendingPath("users")
                             .childByAppendingPath(auth.uid).setValue(newUser)
                         
                         self.performSegueWithIdentifier("RegisterSuccessSegue", sender: self)

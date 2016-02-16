@@ -7,6 +7,7 @@ target 'lipht' do
 
 pod 'Firebase', '>= 2.5.0'
 pod 'Toast-Swift', '~> 1.0.0'
+pod ’Charts'
 
 end
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A2C0E2EAAD4D1F1BF193073 /* Pods_lipht.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67C76FBED4DEC65B159C640 /* Pods_lipht.framework */; };
+		AF105F0A1C711B6B00E64EA3 /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF105F091C711B6B00E64EA3 /* SetTableViewCell.swift */; };
 		AF1A449F1C5D6EC300332A3B /* LiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A449E1C5D6EC300332A3B /* LiftViewController.swift */; };
 		AF1A44A11C5D6F0300332A3B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A44A01C5D6F0300332A3B /* ReviewViewController.swift */; };
 		AF1A44A51C5DA4CF00332A3B /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A44A41C5DA4CF00332A3B /* Exercise.swift */; };
@@ -16,19 +17,30 @@
 		AF32CCEF1C5D576B00D97EB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32CCED1C5D576B00D97EB0 /* Main.storyboard */; };
 		AF32CCF11C5D576B00D97EB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF32CCF01C5D576B00D97EB0 /* Assets.xcassets */; };
 		AF32CCF41C5D576B00D97EB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32CCF21C5D576B00D97EB0 /* LaunchScreen.storyboard */; };
+		AF420C301C72943900247E73 /* UserExerciseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF420C2F1C72943900247E73 /* UserExerciseManager.swift */; };
+		AF420C321C729A2800247E73 /* UserExerciseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF420C311C729A2800247E73 /* UserExerciseResult.swift */; };
+		AF568B0E1C6EF2D1002726CB /* iron_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AF568B0D1C6EF2D1002726CB /* iron_logo.png */; };
+		AF568B121C6F5F7F002726CB /* Message-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AF568B111C6F5F7F002726CB /* Message-50.png */; };
+		AF568B141C6F648C002726CB /* Lock-64.png in Resources */ = {isa = PBXBuildFile; fileRef = AF568B131C6F648C002726CB /* Lock-64.png */; };
 		AF804DF31C5DB7B800BD9BC9 /* UserExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF804DF21C5DB7B800BD9BC9 /* UserExercise.swift */; };
 		AF804DF51C5E475800BD9BC9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */; };
 		AF8759D71C653FA200A42D42 /* UserExerciseSetGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8759D61C653FA200A42D42 /* UserExerciseSetGroup.swift */; };
 		AFA2883A1C6855F3008EA54C /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA288391C6855F3008EA54C /* ExerciseTableViewCell.swift */; };
-		AFCCB5F71C5E52B1002ACD9B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCB5F61C5E52B1002ACD9B /* UserManager.swift */; };
+		AFC461211C723B840086428A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC461201C723B840086428A /* Constants.swift */; };
+		AFC461261C7240AA0086428A /* IronUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC461251C7240AA0086428A /* IronUITextField.swift */; };
+		AFCB11EE1C6FCE2D00FA8674 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCB11EC1C6FCE2D00FA8674 /* Charts.framework */; };
+		AFCB11EF1C6FCE2D00FA8674 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCB11ED1C6FCE2D00FA8674 /* Firebase.framework */; };
+		AFCB11F11C700A1900FA8674 /* User-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCB11F01C700A1900FA8674 /* User-50.png */; };
 		AFCCB5F91C5E5F53002ACD9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCB5F81C5E5F53002ACD9B /* User.swift */; };
 		AFCCB5FB1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCB5FA1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift */; };
 		AFCCB5FD1C5EB80E002ACD9B /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCB5FC1C5EB80E002ACD9B /* ReviewTableViewCell.swift */; };
+		AFCCDBC01C7247B0008DBA30 /* IronUISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCDBBF1C7247B0008DBA30 /* IronUISearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		58CAF3BBA4AA9D1C963E7489 /* Pods-lipht.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lipht.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lipht/Pods-lipht.debug.xcconfig"; sourceTree = "<group>"; };
 		7C6141D69DEB237D6AF5FA00 /* Pods-lipht.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lipht.release.xcconfig"; path = "Pods/Target Support Files/Pods-lipht/Pods-lipht.release.xcconfig"; sourceTree = "<group>"; };
+		AF105F091C711B6B00E64EA3 /* SetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
 		AF1A449E1C5D6EC300332A3B /* LiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftViewController.swift; sourceTree = "<group>"; };
 		AF1A44A01C5D6F0300332A3B /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		AF1A44A41C5DA4CF00332A3B /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
@@ -39,14 +51,24 @@
 		AF32CCF01C5D576B00D97EB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF32CCF31C5D576B00D97EB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF32CCF51C5D576B00D97EB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF420C2F1C72943900247E73 /* UserExerciseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExerciseManager.swift; sourceTree = "<group>"; };
+		AF420C311C729A2800247E73 /* UserExerciseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExerciseResult.swift; sourceTree = "<group>"; };
+		AF568B0D1C6EF2D1002726CB /* iron_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iron_logo.png; path = ../../../../Desktop/iron_logo.png; sourceTree = "<group>"; };
+		AF568B111C6F5F7F002726CB /* Message-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Message-50.png"; sourceTree = "<group>"; };
+		AF568B131C6F648C002726CB /* Lock-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lock-64.png"; sourceTree = "<group>"; };
 		AF804DF21C5DB7B800BD9BC9 /* UserExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExercise.swift; sourceTree = "<group>"; };
 		AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AF8759D61C653FA200A42D42 /* UserExerciseSetGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExerciseSetGroup.swift; sourceTree = "<group>"; };
 		AFA288391C6855F3008EA54C /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
-		AFCCB5F61C5E52B1002ACD9B /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		AFC461201C723B840086428A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AFC461251C7240AA0086428A /* IronUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronUITextField.swift; sourceTree = "<group>"; };
+		AFCB11EC1C6FCE2D00FA8674 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "Pods/../build/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
+		AFCB11ED1C6FCE2D00FA8674 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "Pods/../build/Debug-iphoneos/Firebase.framework"; sourceTree = "<group>"; };
+		AFCB11F01C700A1900FA8674 /* User-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User-50.png"; path = "../../../../Desktop/User-50.png"; sourceTree = "<group>"; };
 		AFCCB5F81C5E5F53002ACD9B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AFCCB5FA1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseStreamViewController.swift; sourceTree = "<group>"; };
 		AFCCB5FC1C5EB80E002ACD9B /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		AFCCDBBF1C7247B0008DBA30 /* IronUISearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronUISearchBar.swift; sourceTree = "<group>"; };
 		D67C76FBED4DEC65B159C640 /* Pods_lipht.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lipht.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -55,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCB11EE1C6FCE2D00FA8674 /* Charts.framework in Frameworks */,
+				AFCB11EF1C6FCE2D00FA8674 /* Firebase.framework in Frameworks */,
 				0A2C0E2EAAD4D1F1BF193073 /* Pods_lipht.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +89,8 @@
 		87E55B7FAE881BF97FDC16EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFCB11EC1C6FCE2D00FA8674 /* Charts.framework */,
+				AFCB11ED1C6FCE2D00FA8674 /* Firebase.framework */,
 				D67C76FBED4DEC65B159C640 /* Pods_lipht.framework */,
 			);
 			name = Frameworks;
@@ -91,25 +117,82 @@
 		AF32CCE81C5D576B00D97EB0 /* lipht */ = {
 			isa = PBXGroup;
 			children = (
+				AFC461271C7241800086428A /* IronExtensions */,
+				AF4A173A1C72389D004A3A66 /* Assets */,
+				AF4A17361C7237DA004A3A66 /* Classes */,
+				AF4A17391C72388B004A3A66 /* Managers */,
+				AF4A17371C723824004A3A66 /* ViewControllers */,
 				AF32CCE91C5D576B00D97EB0 /* AppDelegate.swift */,
-				AF32CCEB1C5D576B00D97EB0 /* LoginViewController.swift */,
 				AF32CCED1C5D576B00D97EB0 /* Main.storyboard */,
 				AF32CCF01C5D576B00D97EB0 /* Assets.xcassets */,
 				AF32CCF21C5D576B00D97EB0 /* LaunchScreen.storyboard */,
 				AF32CCF51C5D576B00D97EB0 /* Info.plist */,
-				AF1A449E1C5D6EC300332A3B /* LiftViewController.swift */,
-				AF1A44A01C5D6F0300332A3B /* ReviewViewController.swift */,
-				AF1A44A41C5DA4CF00332A3B /* Exercise.swift */,
-				AF804DF21C5DB7B800BD9BC9 /* UserExercise.swift */,
-				AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */,
-				AFCCB5F61C5E52B1002ACD9B /* UserManager.swift */,
-				AFCCB5F81C5E5F53002ACD9B /* User.swift */,
-				AFCCB5FA1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift */,
-				AFCCB5FC1C5EB80E002ACD9B /* ReviewTableViewCell.swift */,
-				AF8759D61C653FA200A42D42 /* UserExerciseSetGroup.swift */,
-				AFA288391C6855F3008EA54C /* ExerciseTableViewCell.swift */,
 			);
 			path = lipht;
+			sourceTree = "<group>";
+		};
+		AF4A17361C7237DA004A3A66 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AF8759D61C653FA200A42D42 /* UserExerciseSetGroup.swift */,
+				AFCCB5F81C5E5F53002ACD9B /* User.swift */,
+				AF804DF21C5DB7B800BD9BC9 /* UserExercise.swift */,
+				AF1A44A41C5DA4CF00332A3B /* Exercise.swift */,
+				AF420C311C729A2800247E73 /* UserExerciseResult.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		AF4A17371C723824004A3A66 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF4A17381C72384C004A3A66 /* TableViewCell */,
+				AFCCB5FA1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift */,
+				AF32CCEB1C5D576B00D97EB0 /* LoginViewController.swift */,
+				AF1A449E1C5D6EC300332A3B /* LiftViewController.swift */,
+				AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */,
+				AF1A44A01C5D6F0300332A3B /* ReviewViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AF4A17381C72384C004A3A66 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AFA288391C6855F3008EA54C /* ExerciseTableViewCell.swift */,
+				AFCCB5FC1C5EB80E002ACD9B /* ReviewTableViewCell.swift */,
+				AF105F091C711B6B00E64EA3 /* SetTableViewCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		AF4A17391C72388B004A3A66 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				AFC461201C723B840086428A /* Constants.swift */,
+				AF420C2F1C72943900247E73 /* UserExerciseManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		AF4A173A1C72389D004A3A66 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AFCB11F01C700A1900FA8674 /* User-50.png */,
+				AF568B0D1C6EF2D1002726CB /* iron_logo.png */,
+				AF568B131C6F648C002726CB /* Lock-64.png */,
+				AF568B111C6F5F7F002726CB /* Message-50.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		AFC461271C7241800086428A /* IronExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				AFC461251C7240AA0086428A /* IronUITextField.swift */,
+				AFCCDBBF1C7247B0008DBA30 /* IronUISearchBar.swift */,
+			);
+			name = IronExtensions;
 			sourceTree = "<group>";
 		};
 		FC510BA79CE59F98BED5F7A3 /* Pods */ = {
@@ -183,8 +266,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCB11F11C700A1900FA8674 /* User-50.png in Resources */,
+				AF568B0E1C6EF2D1002726CB /* iron_logo.png in Resources */,
 				AF32CCF41C5D576B00D97EB0 /* LaunchScreen.storyboard in Resources */,
 				AF32CCF11C5D576B00D97EB0 /* Assets.xcassets in Resources */,
+				AF568B121C6F5F7F002726CB /* Message-50.png in Resources */,
+				AF568B141C6F648C002726CB /* Lock-64.png in Resources */,
 				AF32CCEF1C5D576B00D97EB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,19 +331,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF105F0A1C711B6B00E64EA3 /* SetTableViewCell.swift in Sources */,
+				AF420C321C729A2800247E73 /* UserExerciseResult.swift in Sources */,
 				AF1A44A51C5DA4CF00332A3B /* Exercise.swift in Sources */,
 				AF32CCEC1C5D576B00D97EB0 /* LoginViewController.swift in Sources */,
 				AFCCB5FB1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift in Sources */,
+				AF420C301C72943900247E73 /* UserExerciseManager.swift in Sources */,
 				AF804DF51C5E475800BD9BC9 /* RegisterViewController.swift in Sources */,
 				AF804DF31C5DB7B800BD9BC9 /* UserExercise.swift in Sources */,
 				AF8759D71C653FA200A42D42 /* UserExerciseSetGroup.swift in Sources */,
+				AFC461211C723B840086428A /* Constants.swift in Sources */,
 				AF32CCEA1C5D576B00D97EB0 /* AppDelegate.swift in Sources */,
 				AFCCB5FD1C5EB80E002ACD9B /* ReviewTableViewCell.swift in Sources */,
 				AFA2883A1C6855F3008EA54C /* ExerciseTableViewCell.swift in Sources */,
 				AFCCB5F91C5E5F53002ACD9B /* User.swift in Sources */,
 				AF1A44A11C5D6F0300332A3B /* ReviewViewController.swift in Sources */,
-				AFCCB5F71C5E52B1002ACD9B /* UserManager.swift in Sources */,
+				AFCCDBC01C7247B0008DBA30 /* IronUISearchBar.swift in Sources */,
 				AF1A449F1C5D6EC300332A3B /* LiftViewController.swift in Sources */,
+				AFC461261C7240AA0086428A /* IronUITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +462,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = lipht/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lipht.lipht;
@@ -385,6 +481,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = lipht/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lipht.lipht;

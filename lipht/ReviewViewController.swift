@@ -19,8 +19,9 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let formatter = NSDateFormatter()
     
     var selectedRow : NSNumber = -1
-    
-    var exerciseSetGroupDictionary : [String : UserExerciseSetGroup] = [:]
+    let calendar = NSCalendar.currentCalendar()
+
+    var exerciseSetGroupTuple : [(NSDate, String, UserExerciseSetGroup)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,19 +45,25 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.exerciseSetGroupDictionary.values.count
+        return self.exerciseSetGroupTuple.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : ReviewTableViewCell = self.reviewTableView.dequeueReusableCellWithIdentifier("cell") as! ReviewTableViewCell
 
-        let exerciseSetGroup = Array(self.exerciseSetGroupDictionary.values)[indexPath.row]
+        let exerciseSetGroup = self.exerciseSetGroupTuple[indexPath.row]
 
-        cell.load(exerciseSetGroup)
+        cell.load(exerciseSetGroup.2)
+        
+        print("-----")
+        print(exerciseSetGroup.2.getStrengthScore())
+        print(exerciseSetGroup.2.getCoreScore())
+        print(exerciseSetGroup.2.getEnduranceScore())
+        print("-----")
+        
         return cell
     }
     
@@ -72,7 +79,7 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let exerciseSetGroup = Array(self.exerciseSetGroupDictionary.values)[indexPath.row]
+        let exerciseSetGroup = self.exerciseSetGroupTuple[indexPath.row].2
         
         if (selectedRow == indexPath.row) {
             return CGFloat(70 + exerciseSetGroup.exercises.count * 25)
@@ -83,45 +90,12 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     private func loadExercises() {
         
-        ref.childByAppendingPath("userExercises")
-            .queryOrderedByChild("userID")
-            .queryEqualToValue(user.uid)
-            .observeSingleEventOfType(.Value, withBlock: { snapshot in
-                
-                self.userExercises.removeAll()
-                self.exerciseSetGroupDictionary.removeAll()
-                
-                let enumerator = snapshot.children
-                while let item = enumerator.nextObject() as? FDataSnapshot {
-
-                    let exercise = UserExercise(item: item)                    
-                    self.userExercises.append(exercise)
-                    
-                    let generatedKey = self.createExerciseSetGroupKey(exercise)
-                    
-                    if self.exerciseSetGroupDictionary.keys.contains(generatedKey) {
-                        var exerciseSetGroup = self.exerciseSetGroupDictionary[generatedKey]
-                        exerciseSetGroup?.exercises.append(exercise)
-                        self.exerciseSetGroupDictionary[generatedKey] = exerciseSetGroup
-                    } else {
-                        var newExerciseSetGroup = UserExerciseSetGroup(fdate: exercise.dateTime, fexerciseKey: exercise.exerciseKey)
-                        newExerciseSetGroup.exercises.append(exercise)
-                        self.exerciseSetGroupDictionary[generatedKey] = newExerciseSetGroup
-                    }
-                    
-                }
-                
-                self.userExercises = self.userExercises.reverse()
-                self.reviewTableView.reloadData()
-            })
-    }
-    
-    private func createExerciseSetGroupKey(exercise : UserExercise) -> String {
-        formatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        
-        let dateString = formatter.stringFromDate(exercise.dateTime)
-
-        return dateString + "-" + exercise.exerciseKey
+        UserExerciseManager.getUserExercises() {
+            (result : UserExerciseResult) in
+            
+            self.exerciseSetGroupTuple = result.userExerciseGroups
+            self.reviewTableView.reloadData()
+        }
     }
     
     /*

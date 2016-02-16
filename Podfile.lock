@@ -1,12 +1,17 @@
 PODS:
+  - Charts (2.2.2):
+    - Charts/Core (= 2.2.2)
+  - Charts/Core (2.2.2)
   - Firebase (2.5.0)
   - Toast-Swift (1.0.0)
 
 DEPENDENCIES:
+  - Charts
   - Firebase (>= 2.5.0)
   - Toast-Swift (~> 1.0.0)
 
 SPEC CHECKSUMS:
+  Charts: e32b718fa716bdb7693b9e419d6d4a39a3f7992e
   Firebase: 744617c0733b45198f9486ebd5cac64ec2d10d79
   Toast-Swift: 709908e9f9a96dfd72438f9301ae28e3e98c16bb
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserExerciseSetGroup {
+class UserExerciseSetGroup {
     
     var date : NSDate
     var exerciseKey : String
@@ -20,4 +20,39 @@ struct UserExerciseSetGroup {
         self.exercises = []
     }
     
+    func getStrengthScore() -> Double {
+        var score : Double = 0.0
+        
+        for exercise in exercises {
+            score += exercise.getStrengthScore()
+        }
+        
+        score = score / Double(exercises.count)
+        
+        return score
+    }
+    
+    func getCoreScore() -> Double {
+        var score : Double = 0.0
+        
+        for exercise in exercises {
+            score += exercise.getCoreScore()
+        }
+        
+        score = score / Double(exercises.count)
+        
+        return score
+    }
+    
+    func getEnduranceScore() -> Double {
+        var score : Double = 0.0
+        
+        for exercise in exercises {
+            score += exercise.getEnduranceScore()
+        }
+        
+        score = score / Double(exercises.count)
+        
+        return score
+    }
 }

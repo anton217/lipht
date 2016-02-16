@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-struct UserExercise {
+class UserExercise {
     
     let userID : String
     let userEmail : String
@@ -40,6 +40,27 @@ struct UserExercise {
         let dateTimeValue = item.value["dateTime"] as! NSNumber
         let dateTimeDouble = dateTimeValue.doubleValue
         self.dateTime = NSDate(timeIntervalSinceReferenceDate: dateTimeDouble)
+    }
+    
+    func getStrengthScore() -> Double {
+        let repValue = min(self.reps.integerValue, 20)
+        let oneRepMaxScore = weight.doubleValue / Constants.repMaxDictionary[repValue]!
+        
+        return oneRepMaxScore * Constants.repMaxDictionary[5]!
+    }
+    
+    func getCoreScore() -> Double {
+        let repValue = min(self.reps.integerValue, 20)
+        let oneRepMaxScore = weight.doubleValue / Constants.repMaxDictionary[repValue]!
+        
+        return oneRepMaxScore * Constants.repMaxDictionary[10]!
+    }
+    
+    func getEnduranceScore() -> Double {
+        let repValue = min(self.reps.integerValue, 20)
+        let oneRepMaxScore = weight.doubleValue / Constants.repMaxDictionary[repValue]!
+        
+        return oneRepMaxScore * Constants.repMaxDictionary[15]!
     }
 }
 

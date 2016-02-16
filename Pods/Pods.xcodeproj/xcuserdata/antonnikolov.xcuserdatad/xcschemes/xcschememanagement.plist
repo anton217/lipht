@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Firebase.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>73048C22F8D20A8D6C8481898A6CE26E</key>
+		<key>3BE38E75979F4194B07313C0C187F4A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AB7B637D869817999A367A8E42A1381</key>
+		<key>70CF23E39D67229E82DEF32EFF1257A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B7AC9326D819482593FE118E915409D7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E112770AFCE875F03B279786E8D7A1E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
