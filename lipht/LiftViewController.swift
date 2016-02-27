@@ -103,13 +103,23 @@ class LiftViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.leftIndicatorView.layer.backgroundColor = UIColor(colorLiteralRed: 170/255, green: 216/255, blue: 176/255, alpha: 1).CGColor
         cell.liftNameLabel.textColor = UIColor(colorLiteralRed: 170/255, green: 216/255, blue: 176/255, alpha: 1)
         
+        //load info for user about lift key
+        UserExerciseManager.getUserExercises() {
+            (result : UserExerciseResult) in
+            
+            for item in result.userExerciseGroups {
+                print(item.2.getStrengthScore())
+            }
+        }
+    
+    
         self.exerciseTableView.beginUpdates()
         self.exerciseTableView.endUpdates()
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if (selectedRow == indexPath.row) {
-            return 185
+            return 350
         }
         
         return 50

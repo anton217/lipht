@@ -16,6 +16,9 @@ class ExerciseStreamViewController: UIViewController, ChartViewDelegate, UITable
     @IBOutlet weak var rep5Button: UIButton!
     @IBOutlet weak var rep10Button: UIButton!
     
+    @IBOutlet weak var exerciseGroupDateLabel: UILabel!
+    @IBOutlet weak var exerciseScoreLabel: UILabel!
+    
     @IBOutlet weak var lineChartView: LineChartView!
 
     var dates : [NSDate] = []
@@ -29,6 +32,8 @@ class ExerciseStreamViewController: UIViewController, ChartViewDelegate, UITable
     
     @IBOutlet weak var setTableView: UITableView!
     @IBOutlet weak var lineUnderTitle: UIView!
+    
+    let formatter = NSDateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +49,8 @@ class ExerciseStreamViewController: UIViewController, ChartViewDelegate, UITable
         self.lineChartView.descriptionTextColor = UIColor.whiteColor()
         self.lineChartView.gridBackgroundColor = UIColor.darkGrayColor()
         self.lineChartView.noDataText = "No data provided"
+        
+        formatter.dateStyle = NSDateFormatterStyle.MediumStyle
         
         UserExerciseManager.getUserExercises() {
             (result : UserExerciseResult) in
@@ -155,6 +162,9 @@ class ExerciseStreamViewController: UIViewController, ChartViewDelegate, UITable
     
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
         self.sets = self.scores[(entry.xIndex)].exercises
+        self.exerciseGroupDateLabel.text = formatter.stringFromDate(self.scores[(entry.xIndex)].date)
+        self.exerciseScoreLabel.text = Int(self.scores[(entry.xIndex)].getCoreScore()).description
+        
         self.setTableView.reloadData()
         
         print("\(entry.value) in \(dates[entry.xIndex])")

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ExerciseTableViewCell: UITableViewCell {
+class ExerciseTableViewCell: UITableViewCell, UIScrollViewDelegate {
 
     var ref = Firebase(url:"https://lipht.firebaseio.com")
     
@@ -26,6 +26,10 @@ class ExerciseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var liftButton: UIButton!
     
+    @IBOutlet weak var scrollLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -34,6 +38,26 @@ class ExerciseTableViewCell: UITableViewCell {
         self.liftButton.layer.borderColor = UIColor(colorLiteralRed: 255/255, green: 111/255, blue: 105/255, alpha: 0.25).CGColor
         self.liftButton.layer.borderWidth = 2
         self.liftButton.layer.cornerRadius = 5
+        
+        let scrollViewWidth:CGFloat = self.scrollView.frame.width
+        let scrollViewHeight:CGFloat = self.scrollView.frame.height
+        //2
+        scrollLabel.text = "bench press"
+        scrollLabel.textColor = .blackColor()
+        //3
+        let pageOne = UIView(frame: CGRectMake(0, 0,scrollViewWidth, scrollViewHeight))
+        let pageTwo = UIView(frame: CGRectMake(scrollViewWidth, 0,scrollViewWidth, scrollViewHeight))
+        let pageThree = UIView(frame: CGRectMake(scrollViewWidth*2, 0,scrollViewWidth, scrollViewHeight))
+        let pageFour = UIView(frame: CGRectMake(scrollViewWidth*3, 0,scrollViewWidth, scrollViewHeight))
+        
+        self.scrollView.addSubview(pageOne)
+        self.scrollView.addSubview(pageTwo)
+        self.scrollView.addSubview(pageThree)
+        self.scrollView.addSubview(pageFour)
+        //4
+        self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.width * 4, self.scrollView.frame.height)
+        self.scrollView.delegate = self
+        self.pageControl.currentPage = 0
     }
     
     @IBAction func submitLift(sender: AnyObject) {
@@ -86,4 +110,28 @@ class ExerciseTableViewCell: UITableViewCell {
     func load() {
         
     }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView){
+        // Test the offset and calculate the current page after scrolling ends
+        let pageWidth:CGFloat = CGRectGetWidth(scrollView.frame)
+        let currentPage:CGFloat = floor((scrollView.contentOffset.x-pageWidth/2)/pageWidth)+1
+        // Change the indicator
+        self.pageControl.currentPage = Int(currentPage);
+        // Change the text accordingly
+//        if Int(currentPage) == 0{
+//            textView.text = "Sweettutos.com is your blog of choice for Mobile tutorials"
+//        }else if Int(currentPage) == 1{
+//            textView.text = "I write mobile tutorials mainly targeting iOS"
+//        }else if Int(currentPage) == 2{
+//            textView.text = "And sometimes I write games tutorials about Unity"
+//        }else{
+//            textView.text = "Keep visiting sweettutos.com for new coming tutorials, and don't forget to subscribe to be notified by email :)"
+//            // Show the "Let's Start" button in the last slide (with a fade in animation)
+//            UIView.animateWithDuration(1.0, animations: { () -> Void in
+//                self.startButton.alpha = 1.0
+//            })
+//        }
+    }
+    
+    
 }

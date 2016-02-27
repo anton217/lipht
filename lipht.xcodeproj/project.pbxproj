@@ -12,6 +12,10 @@
 		AF1A449F1C5D6EC300332A3B /* LiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A449E1C5D6EC300332A3B /* LiftViewController.swift */; };
 		AF1A44A11C5D6F0300332A3B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A44A01C5D6F0300332A3B /* ReviewViewController.swift */; };
 		AF1A44A51C5DA4CF00332A3B /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A44A41C5DA4CF00332A3B /* Exercise.swift */; };
+		AF2C62C81C7A7DE80088806E /* LoginSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C62C71C7A7DE80088806E /* LoginSectionViewController.swift */; };
+		AF2C62CA1C7A7DF80088806E /* RegisterSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C62C91C7A7DF80088806E /* RegisterSectionViewController.swift */; };
+		AF2C62CC1C7A7E4F0088806E /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C62CB1C7A7E4F0088806E /* AccountViewController.swift */; };
+		AF2C62CE1C7A84830088806E /* AccountContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C62CD1C7A84830088806E /* AccountContainerViewController.swift */; };
 		AF32CCEA1C5D576B00D97EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32CCE91C5D576B00D97EB0 /* AppDelegate.swift */; };
 		AF32CCEC1C5D576B00D97EB0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32CCEB1C5D576B00D97EB0 /* LoginViewController.swift */; };
 		AF32CCEF1C5D576B00D97EB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32CCED1C5D576B00D97EB0 /* Main.storyboard */; };
@@ -26,6 +30,7 @@
 		AF804DF51C5E475800BD9BC9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */; };
 		AF8759D71C653FA200A42D42 /* UserExerciseSetGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8759D61C653FA200A42D42 /* UserExerciseSetGroup.swift */; };
 		AFA2883A1C6855F3008EA54C /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA288391C6855F3008EA54C /* ExerciseTableViewCell.swift */; };
+		AFA6A99C1C814993008DBD41 /* LiftDayOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6A99B1C814993008DBD41 /* LiftDayOverviewViewController.swift */; };
 		AFC461211C723B840086428A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC461201C723B840086428A /* Constants.swift */; };
 		AFC461261C7240AA0086428A /* IronUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC461251C7240AA0086428A /* IronUITextField.swift */; };
 		AFCB11EE1C6FCE2D00FA8674 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCB11EC1C6FCE2D00FA8674 /* Charts.framework */; };
@@ -44,6 +49,10 @@
 		AF1A449E1C5D6EC300332A3B /* LiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftViewController.swift; sourceTree = "<group>"; };
 		AF1A44A01C5D6F0300332A3B /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		AF1A44A41C5DA4CF00332A3B /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		AF2C62C71C7A7DE80088806E /* LoginSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSectionViewController.swift; sourceTree = "<group>"; };
+		AF2C62C91C7A7DF80088806E /* RegisterSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterSectionViewController.swift; sourceTree = "<group>"; };
+		AF2C62CB1C7A7E4F0088806E /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		AF2C62CD1C7A84830088806E /* AccountContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountContainerViewController.swift; sourceTree = "<group>"; };
 		AF32CCE61C5D576B00D97EB0 /* lipht.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lipht.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF32CCE91C5D576B00D97EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF32CCEB1C5D576B00D97EB0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +69,7 @@
 		AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AF8759D61C653FA200A42D42 /* UserExerciseSetGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExerciseSetGroup.swift; sourceTree = "<group>"; };
 		AFA288391C6855F3008EA54C /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		AFA6A99B1C814993008DBD41 /* LiftDayOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftDayOverviewViewController.swift; sourceTree = "<group>"; };
 		AFC461201C723B840086428A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AFC461251C7240AA0086428A /* IronUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronUITextField.swift; sourceTree = "<group>"; };
 		AFCB11EC1C6FCE2D00FA8674 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "Pods/../build/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
@@ -152,6 +162,11 @@
 				AF1A449E1C5D6EC300332A3B /* LiftViewController.swift */,
 				AF804DF41C5E475800BD9BC9 /* RegisterViewController.swift */,
 				AF1A44A01C5D6F0300332A3B /* ReviewViewController.swift */,
+				AF2C62C71C7A7DE80088806E /* LoginSectionViewController.swift */,
+				AF2C62C91C7A7DF80088806E /* RegisterSectionViewController.swift */,
+				AF2C62CB1C7A7E4F0088806E /* AccountViewController.swift */,
+				AF2C62CD1C7A84830088806E /* AccountContainerViewController.swift */,
+				AFA6A99B1C814993008DBD41 /* LiftDayOverviewViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -333,6 +348,8 @@
 			files = (
 				AF105F0A1C711B6B00E64EA3 /* SetTableViewCell.swift in Sources */,
 				AF420C321C729A2800247E73 /* UserExerciseResult.swift in Sources */,
+				AF2C62CC1C7A7E4F0088806E /* AccountViewController.swift in Sources */,
+				AFA6A99C1C814993008DBD41 /* LiftDayOverviewViewController.swift in Sources */,
 				AF1A44A51C5DA4CF00332A3B /* Exercise.swift in Sources */,
 				AF32CCEC1C5D576B00D97EB0 /* LoginViewController.swift in Sources */,
 				AFCCB5FB1C5E9ED4002ACD9B /* ExerciseStreamViewController.swift in Sources */,
@@ -342,13 +359,16 @@
 				AF8759D71C653FA200A42D42 /* UserExerciseSetGroup.swift in Sources */,
 				AFC461211C723B840086428A /* Constants.swift in Sources */,
 				AF32CCEA1C5D576B00D97EB0 /* AppDelegate.swift in Sources */,
+				AF2C62CA1C7A7DF80088806E /* RegisterSectionViewController.swift in Sources */,
 				AFCCB5FD1C5EB80E002ACD9B /* ReviewTableViewCell.swift in Sources */,
+				AF2C62CE1C7A84830088806E /* AccountContainerViewController.swift in Sources */,
 				AFA2883A1C6855F3008EA54C /* ExerciseTableViewCell.swift in Sources */,
 				AFCCB5F91C5E5F53002ACD9B /* User.swift in Sources */,
 				AF1A44A11C5D6F0300332A3B /* ReviewViewController.swift in Sources */,
 				AFCCDBC01C7247B0008DBA30 /* IronUISearchBar.swift in Sources */,
 				AF1A449F1C5D6EC300332A3B /* LiftViewController.swift in Sources */,
 				AFC461261C7240AA0086428A /* IronUITextField.swift in Sources */,
+				AF2C62C81C7A7DE80088806E /* LoginSectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

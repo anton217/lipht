@@ -6,7 +6,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
     
     let almostClear : UIColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.1)
     
@@ -20,7 +19,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private func finishStylingButtons() {
         self.loginButton.layer.borderColor = UIColor(colorLiteralRed: 150/255, green: 206/255, blue: 180/255, alpha: 0.5).CGColor
-        self.registerButton.layer.borderColor = UIColor(colorLiteralRed: 255/255, green: 204/255, blue: 92/255, alpha: 0.5).CGColor
     }
     
     private func finishStylingTextFields() {

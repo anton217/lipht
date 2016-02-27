@@ -42,9 +42,50 @@ class UserExerciseManager {
                 
                 completion(result: result)
             })
-
-        
     }
+    
+    static func getUserExercisesForKey(exerciseKey : String, completion : (result : UserExerciseResult) -> Void) {
+        
+        let userID = Constants.firebase.authData.uid
+        var userExercises : [UserExercise] = []
+        var exerciseSetGroupTuple : [(NSDate, String, UserExerciseSetGroup)] = []
+        
+        Constants.firebase.childByAppendingPath("userExercises")
+            .queryOrderedByChild("userID")
+            .queryEqualToValue(userID)
+            .observeSingleEventOfType(.Value, withBlock: { snapshot in
+                
+                let enumerator = snapshot.children
+                while let item = enumerator.nextObject() as? FDataSnapshot {
+                    
+                    let exercise : UserExercise = UserExercise(item: item)
+                    userExercises.append(exercise)
+                    
+                    if exercise.exerciseKey == exerciseKey {
+                        if containsTuple(exerciseSetGroupTuple, date: exercise.dateTime, exerciseKey: exercise.exerciseKey) {
+                            let existingTuple = getTupleByDateAndKey(exerciseSetGroupTuple, date: exercise.dateTime, exerciseKey: exercise.exerciseKey)
+                            let entryIndex = self.indexOfEntryInTuple(exerciseSetGroupTuple, tuple: existingTuple)
+                            existingTuple.2.exercises.append(exercise)
+                            exerciseSetGroupTuple[entryIndex] = existingTuple
+                        } else {
+                            let newExerciseSetGroup : UserExerciseSetGroup = UserExerciseSetGroup(fdate: exercise.dateTime, fexerciseKey: exercise.exerciseKey)
+                            let exerciseTuple = (exercise.dateTime, exercise.exerciseKey, newExerciseSetGroup)
+                            exerciseTuple.2.exercises.append(exercise)
+                            exerciseSetGroupTuple.append(exerciseTuple)
+                        }
+                    }
+                }
+                
+                exerciseSetGroupTuple = exerciseSetGroupTuple.sort { $0.0.timeIntervalSince1970 > $1.0.timeIntervalSince1970 }
+                
+                let result : UserExerciseResult = UserExerciseResult()
+                result.userExercises = userExercises
+                result.userExerciseGroups = exerciseSetGroupTuple
+                
+                completion(result: result)
+            })
+    }
+
     
     private static func containsTuple(tupleArray:[(NSDate, String, UserExerciseSetGroup)], date : NSDate, exerciseKey : String) -> Bool {
         return tupleArray.filter{
